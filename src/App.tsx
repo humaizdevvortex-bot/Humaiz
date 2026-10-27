@@ -3,46 +3,58 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React from 'react';
+import { RouterProvider, useRouter } from './router';
 import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Services } from './components/Services';
-import { Skills } from './components/Skills';
-import { Projects } from './components/Projects';
-import { AiExperience } from './components/AiExperience';
-import { ExperienceTimeline } from './components/ExperienceTimeline';
-import { Process } from './components/Process';
-import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AboutPage';
+import { ProjectsPage } from './pages/ProjectsPage';
+import { ServicesPage } from './pages/ServicesPage';
+import { ExperiencePage } from './pages/ExperiencePage';
+import { ContactPage } from './pages/ContactPage';
 
-export default function App() {
-  const [selectedService, setSelectedService] = useState<string>('WordPress Website Development');
+const AppContent: React.FC = () => {
+  const { currentPath } = useRouter();
 
-  const handleSelectService = (serviceName: string) => {
-    setSelectedService(serviceName);
+  const renderCurrentPage = () => {
+    switch (currentPath) {
+      case '/about':
+        return <AboutPage />;
+      case '/projects':
+        return <ProjectsPage />;
+      case '/services':
+        return <ServicesPage />;
+      case '/experience':
+        return <ExperiencePage />;
+      case '/contact':
+        return <ContactPage />;
+      case '/':
+      default:
+        return <HomePage />;
+    }
   };
 
   return (
-    <div className="min-h-screen bg-[#070a12] text-slate-200 selection:bg-orange-500/30 selection:text-orange-300">
-      {/* Sticky Navigation */}
+    <div className="min-h-screen bg-[#070a12] text-slate-200 selection:bg-orange-500/30 selection:text-orange-300 flex flex-col justify-between">
+      {/* Multi-Page Sticky Navigation */}
       <Header />
 
-      {/* Main Content Sections */}
-      <main>
-        <Hero />
-        <About />
-        <Services onSelectService={handleSelectService} />
-        <Skills />
-        <Projects />
-        <AiExperience />
-        <ExperienceTimeline />
-        <Process />
-        <Contact initialService={selectedService} />
+      {/* Dynamic Multi-Page Router View */}
+      <main className="flex-1">
+        {renderCurrentPage()}
       </main>
 
-      {/* Footer */}
+      {/* Global Footer */}
       <Footer />
     </div>
+  );
+};
+
+export default function App() {
+  return (
+    <RouterProvider>
+      <AppContent />
+    </RouterProvider>
   );
 }

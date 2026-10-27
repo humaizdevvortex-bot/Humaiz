@@ -2,11 +2,10 @@ import React from 'react';
 import {
   Briefcase,
   GraduationCap,
-  Calendar,
   Building,
   CheckCircle2,
   Users,
-  Code,
+  Layers,
   Sparkles
 } from 'lucide-react';
 
@@ -14,19 +13,35 @@ export const ExperienceTimeline: React.FC = () => {
   const experiences = [
     {
       period: 'October 2024 – Present',
-      role: 'WordPress Developer & SEO Technical Contributor',
+      role: 'WordPress Developer & Technical Contributor',
       company: 'DevVortex',
       type: 'Agency Role',
-      highlight: 'Healthcare, HVAC, Real Estate & Mentorship',
+      highlight: 'Healthcare, HVAC Networks, Real Estate & Mentorship',
       description:
-        'Building high-conversion websites for local businesses, healthcare clinics, HVAC services, and real estate professionals. Collaborating directly with SEO strategists on technical website structures, schema markup, and lead-generation architectures.',
+        'Building high-conversion websites for local businesses, healthcare providers, HVAC service networks, and real estate professionals. Collaborating directly with SEO teams on technical website structures, schema markup, and lead-generation architecture.',
       bullets: [
-        'Engineered responsive WordPress & Elementor sites for healthcare and multi-city HVAC networks.',
-        'Structured local SEO silos and lead-generation pages with clean semantic headings.',
-        'Trained and guided two interns in WordPress development standards and responsive workflows.',
-        'Ensured cross-browser fidelity, high Core Web Vitals, and responsive mobile rendering.',
+        'Engineered responsive WordPress & Elementor platforms for medical clinics and multi-city HVAC networks.',
+        'Structured local SEO silos and high-converting lead capture funnels with clean semantic headings.',
+        'Trained and guided two junior developers and interns in WordPress standards and responsive QA.',
+        'Audited and achieved high Core Web Vitals and speed scores on mobile and desktop viewports.',
       ],
-      tags: ['WordPress', 'Elementor', 'Local SEO Architecture', 'Team Mentorship', 'Lead Gen'],
+      tags: ['WordPress Core', 'Elementor Pro', 'Local SEO Architecture', 'Team Mentorship', 'Lead Gen'],
+    },
+    {
+      period: '2023 – Present',
+      role: 'Freelance & Collaborative Web Developer',
+      company: 'Independent & Partner Engagements',
+      type: 'Direct Client & White-Label Partnerships',
+      highlight: 'Custom E-Commerce & Agency Deliverables',
+      description:
+        'Partnered on high-performance freelance e-commerce stores and corporate websites (including Duologiq client projects), handling end-to-end theme development, custom shop layouts, and client training.',
+      bullets: [
+        'Developed custom WooCommerce and Shopify stores for niche brands (watches, bags, custom merchandise).',
+        'Built multi-doctor clinical websites and case study showcases for Duologiq.',
+        'Delivered reliable, confidential white-label web assets for partner marketing agencies.',
+        'Configured secure payment gateways, inventory feeds, and conversion-optimized checkouts.',
+      ],
+      tags: ['Shopify', 'WooCommerce', 'White-Label Delivery', 'Duologiq', 'E-Commerce CRO'],
     },
     {
       period: 'December 2025 – April 2026',
@@ -39,18 +54,18 @@ export const ExperienceTimeline: React.FC = () => {
       bullets: [
         'Built and maintained conversion-optimized GoHighLevel (GHL) funnel pages and forms.',
         'Contributed to a responsive Webflow client website with customized layout components.',
-        'Collaborated with marketing stakeholders to test and verify lead capture integrations.',
+        'Collaborated with marketing stakeholders to test and verify automated lead capture integrations.',
       ],
       tags: ['GoHighLevel (GHL)', 'Webflow', 'Funnels', 'Lead Automation'],
     },
     {
       period: 'October 2023 – October 2024',
-      role: 'Intern → Junior WordPress Developer → Team Lead Responsibilities',
+      role: 'WordPress Developer & Team Lead Responsibilities',
       company: 'Rex Technologies, Lahore',
-      type: 'Full-Time Growth Journey',
+      type: 'Growth Journey',
       highlight: 'From Intern to Team Leadership',
       description:
-        'Launched my professional WordPress career at Rex Technologies. Quickly advanced from intern to Junior WordPress Developer, taking on team leadership responsibilities across high-volume e-commerce and corporate deliverables.',
+        'Launched my professional WordPress career at Rex Technologies, rapidly progressing to team leadership responsibilities across high-volume e-commerce and corporate deliverables.',
       bullets: [
         'Developed dozens of client websites and stores using Elementor, WPBakery, WooCommerce, and Shopify.',
         'Executed theme customization, catalog imports, product listings, and custom styling with HTML, CSS, and Bootstrap.',
@@ -58,21 +73,6 @@ export const ExperienceTimeline: React.FC = () => {
         'Assumed team leadership responsibilities: coordinating project tasks, overseeing junior deliverables, and meeting client deadlines.',
       ],
       tags: ['WordPress', 'Elementor', 'WPBakery', 'WooCommerce', 'Shopify', 'Bootstrap', 'Team Leadership'],
-    },
-    {
-      period: '2023 – Present',
-      role: 'Freelance & Collaborative Web Developer',
-      company: 'Independent & Partner Engagements',
-      type: 'Client Engagements',
-      highlight: 'Stores & Corporate Deliverables',
-      description:
-        'Partnered on freelance e-commerce stores and corporate websites (including Duologiq client projects), handling end-to-end site setup, custom shop pages, and client training.',
-      bullets: [
-        'Developed custom WooCommerce and Shopify stores for niche brands (watches, bags, neon lights).',
-        'Contributed to multi-doctor clinical websites and case study showcases for Duologiq.',
-        'Delivered reliable white-label web assets for partner agencies.',
-      ],
-      tags: ['Shopify', 'WooCommerce', 'Freelance Collaboration', 'Duologiq'],
     },
     {
       period: 'Graduated 2022',
@@ -83,32 +83,32 @@ export const ExperienceTimeline: React.FC = () => {
       description:
         'Earned a four-year Bachelor of Science degree in Computer Science, establishing strong theoretical and practical foundations in programming, database structures, web engineering, and software development lifecycles.',
       bullets: [
-        'Studied data structures, algorithms, object-oriented programming, and relational databases.',
-        'Participated in web programming and practical software development coursework.',
+        'Studied data structures, algorithms, object-oriented programming, and relational database design.',
+        'Completed specialized web engineering coursework in PHP, relational MySQL, and client-side interfaces.',
       ],
       tags: ['Computer Science', 'Software Engineering', 'Database Systems', 'Web Fundamentals'],
     },
   ];
 
   return (
-    <section id="experience" className="py-20 md:py-28 bg-[#070a12] relative">
+    <section className="py-20 md:py-28 bg-[#070a12] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center space-y-3 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono uppercase tracking-widest font-semibold">
             <Briefcase className="w-3.5 h-3.5" />
-            CAREER JOURNEY
+            CAREER CHRONOLOGY
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
             Professional Experience & Milestones
           </h2>
           <p className="text-slate-400 max-w-2xl text-sm sm:text-base leading-relaxed">
-            A transparent and verified timeline of my career progression, leadership responsibilities, and client deliverables.
+            A transparent and verified timeline of my career progression, agency leadership, and production client deliverables.
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full" />
         </div>
 
-        {/* Timeline Flow */}
+        {/* Shuffled Timeline: DevVortex -> Freelance -> Eliix -> Rex -> GCUF */}
         <div className="relative border-l-2 border-orange-500/30 ml-4 md:ml-32 lg:ml-40 space-y-12">
           {experiences.map((exp, index) => {
             const isEducation = exp.role.includes('BS in Computer Science');
