@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://humaiz-rehman-portfolio.netlify.app/sitemap.xml
